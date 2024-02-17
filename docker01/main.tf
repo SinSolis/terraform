@@ -12,9 +12,9 @@ provider "proxmox" {
   pm_tls_insecure = "true"
 }
 
-resource "proxmox_vm_qemu" "lab01" {
+resource "proxmox_vm_qemu" "docker01" {
   count = 1
-  name = "lab01"
+  name = "docker01"
   os_type = "cloud-init"
   target_node = "pve"
   onboot = true
@@ -42,7 +42,7 @@ resource "proxmox_vm_qemu" "lab01" {
   #/dev/sdb
   disk {
     slot = 1
-    size = "200G"
+    size = "1500G"
     type = "scsi"
     storage = "primary-datastore"
   }
