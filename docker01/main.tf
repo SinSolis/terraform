@@ -42,7 +42,7 @@ resource "proxmox_vm_qemu" "docker01" {
   #/dev/sdb
   disk {
     slot = 1
-    size = "2000G"
+    size = "5000G"
     type = "scsi"
     storage = "primary-datastore"
   }
