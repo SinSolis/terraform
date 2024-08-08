@@ -41,7 +41,7 @@ resource "proxmox_vm_qemu" "docker01" {
 
   #/dev/sdb
   disk {
-    slot = 0
+    slot = 1
     size = "1000G"
     type = "scsi"
     storage = "fast-data"
@@ -49,12 +49,13 @@ resource "proxmox_vm_qemu" "docker01" {
 
   #/dev/sdc
   disk {
-    slot = 1
+    slot = 2
     size = "10600G"
     type = "scsi"
     storage = "primary-datastore"
   }
-  
+
+
   network {
     model = "virtio"
     bridge = "vmbr0"
