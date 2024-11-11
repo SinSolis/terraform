@@ -34,7 +34,7 @@ resource "proxmox_vm_qemu" "docker01" {
   #/dev/sda
   disk {
     slot = 0
-    size = "50G"
+    size = "1000G"
     type = "scsi"
     storage = "fast-data"
   }
@@ -42,14 +42,6 @@ resource "proxmox_vm_qemu" "docker01" {
   #/dev/sdb
   disk {
     slot = 1
-    size = "1000G"
-    type = "scsi"
-    storage = "fast-data"
-  }
-
-  #/dev/sdc
-  disk {
-    slot = 2
     size = "10600G"
     type = "scsi"
     storage = "primary-datastore"
