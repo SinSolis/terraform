@@ -1,0 +1,38 @@
+cribl-terraform/
+├── main.tf
+├── variables.tf  
+├── outputs.tf
+├── terraform.tfvars
+├── modules/
+│   ├── cribl-infrastructure/     # Level 2: Core infra
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   ├── vpc.tf
+│   │   ├── security-groups.tf
+│   │   ├── iam.tf
+│   │   └── load-balancers.tf
+│   ├── cribl-leader-cluster/     # Level 2: Leader ASG
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   ├── launch-template.tf
+│   │   ├── auto-scaling.tf
+│   │   ├── user-data.sh
+│   │   └── scaling-policies.tf
+│   ├── cribl-worker-cluster/     # Level 2: Worker ASG
+│   │   ├── main.tf
+│   │   ├── variables.tf
+│   │   ├── outputs.tf
+│   │   ├── launch-template.tf
+│   │   ├── auto-scaling.tf
+│   │   ├── user-data.sh
+│   │   └── scaling-policies.tf
+│   └── cribl-shared/            # Level 2: Shared resources
+│       ├── main.tf
+│       ├── variables.tf
+│       ├── outputs.tf
+│       ├── s3-configs.tf
+│       ├── secrets-manager.tf
+│       ├── cloudwatch.tf
+│       └── route53.tf
